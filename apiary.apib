@@ -1,0 +1,55 @@
+FORMAT: 1A
+HOST: https://polls.apiblueprint.org/
+
+# Country Details
+
+Countries in ASEAN
+
+## Countries [/countries]
+
+### List All Countries [GET]
+
+Listing all countries in Asia
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": "1",
+                "name": "Singapore",
+                "capital": "Singapore",
+                "currency": "SGD"
+            },
+            {
+                "id": "2",
+                "name": "United States",
+                "capital": "Washington",
+                "currency": "USD"
+            }
+            
+        ]
+
+### Add New Country [POST]
+
+You may add a new country details. It takes a JSON object containing the detials of countries.
+
++ Request (application/json)
+
+        {
+            "id": "100",
+            "name": "Thailand",
+            "capital": "Bangkok",
+            "currency": "THB"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /countries/100
+
+    + Body
+
+            {
+                "message": "Country added successfully"
+            }
